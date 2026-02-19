@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ĀyurSpa · herbal wellness</title>
+  <!-- Font Awesome 6 (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    body {
+      background-color: #f7f3ee;
+      color: #2e3b2c;
+      line-height: 1.5;
+    }
+
+    :root {
+      --leaf: #3d6e4b;
+      --clay: #a57c6a;
+      --cream: #f1e9de;
+      --spa-dark: #25412b;
+      --golden-mist: #d9b382;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* header / nav */
+    .navbar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 24px 0 16px;
+      border-bottom: 2px solid rgba(163, 130, 94, 0.2);
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 2rem;
+      font-weight: 400;
+      letter-spacing: 1px;
+      color: var(--spa-dark);
+      font-family: 'Times New Roman', serif;
+      line-height: 1.2;
+    }
+    .logo span {
+      font-style: italic;
+      font-size: 1rem;
+      display: block;
+      color: var(--clay);
+      letter-spacing: 2px;
+      margin-top: -5px;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem 2rem;
+      font-weight: 400;
+      align-items: center;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #2e3b2c;
+      font-size: 1.1rem;
+      border-bottom: 2px solid transparent;
+      transition: 0.2s;
+    }
+    .nav-links a:hover {
+      border-bottom-color: var(--leaf);
+      color: var(--leaf);
+    }
+
+    /* hero booking section */
+    .booking-hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin: 48px 0 40px;
+    }
+    .booking-left h1 {
+      font-size: clamp(2rem, 5vw, 2.8rem);
+      font-weight: 400;
+      line-height: 1.2;
+      color: #25412b;
+      margin-bottom: 20px;
+      font-family: 'Times New Roman', serif;
+    }
+    .booking-left .subhead {
+      font-size: 1.2rem;
+      color: #5e6b5a;
+      margin-bottom: 24px;
+      border-left: 4px solid var(--golden-mist);
+      padding-left: 18px;
+    }
+    .booking-left p {
+      color: #3f4d3b;
+      margin-bottom: 28px;
+      max-width: 90%;
+    }
+    .btn-booking {
+      background: var(--leaf);
+      color: white;
+      border: none;
+      padding: 16px 32px;
+      font-size: 1.2rem;
+      border-radius: 60px;
+      cursor: pointer;
+      box-shadow: 0 8px 14px rgba(57, 94, 65, 0.2);
+      transition: 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      width: fit-content;
+    }
+    .btn-booking i {
+      font-size: 1.3rem;
+    }
+    .btn-booking:hover {
+      background: #1f4a2d;
+      transform: scale(1.02);
+    }
+
+    .booking-right {
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="300" height="300"><circle cx="100" cy="100" r="86" fill="%23d9b38220" stroke="%23a57c6a" stroke-width="2"/><path d="M60 120 Q100 70 140 120" stroke="%233d6e4b" fill="none" stroke-width="5" stroke-linecap="round"/><circle cx="100" cy="90" r="10" fill="%233d6e4b30"/><text x="70" y="170" font-size="22" fill="%233d6e4b" font-weight="300">🌿</text></svg>') no-repeat center/contain;
+      background-size: 90%;
+      min-height: 280px;
+      opacity: 0.8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .booking-right .floating-note {
+      background: rgba(255,255,240,0.8);
+      backdrop-filter: blur(4px);
+      padding: 20px 32px;
+      border-radius: 80px;
+      color: var(--spa-dark);
+      font-size: 1.4rem;
+      font-weight: 300;
+      border: 1px solid var(--golden-mist);
+    }
+
+    /* three pillars */
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin: 60px 0 40px;
+    }
+    .pillar-item {
+      background: #ffffffc7;
+      backdrop-filter: blur(4px);
+      padding: 24px 18px;
+      border-radius: 36px;
+      box-shadow: 0 6px 12px rgba(95, 80, 60, 0.05);
+      border: 1px solid #e2d8cb;
+      transition: all 0.2s;
+    }
+    .pillar-item:hover {
+      background: white;
+      box-shadow: 0 12px 24px rgba(60, 80, 45, 0.1);
+    }
+    .pillar-item i {
+      font-size: 2.2rem;
+      color: var(--leaf);
+      margin-bottom: 16px;
+    }
+    .pillar-item h3 {
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin-bottom: 12px;
+      color: #2b4d35;
+    }
+    .pillar-item p {
+      color: #4f5f4b;
+      font-size: 0.95rem;
+    }
+
+    /* Benefit strip */
+    .benefit-section {
+      background: #e1d5c4;
+      padding: 48px 32px;
+      border-radius: 80px 20px 80px 20px;
+      margin: 50px 0;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+    .benefit-text {
+      flex: 1 1 300px;
+    }
+    .benefit-text h2 {
+      font-size: clamp(2rem, 4vw, 2.5rem);
+      font-weight: 350;
+      color: #1f3827;
+      font-family: 'Times New Roman', serif;
+    }
+    .benefit-text h2 i {
+      color: #7f6b4b;
+      font-size: 2rem;
+    }
+    .benefit-text p {
+      margin: 18px 0 0 20px;
+      color: #2e3b2c;
+      border-left: 2px solid var(--leaf);
+      padding-left: 20px;
+    }
+    .benefit-stats {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      background: #f1eae1dd;
+      padding: 28px 36px;
+      border-radius: 60px 0 60px 0;
+      flex: 1 1 280px;
+    }
+    .stat-item {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .stat-item i {
+      font-size: 2.3rem;
+      color: var(--clay);
+      width: 48px;
+    }
+    .stat-item span {
+      font-weight: 300;
+      font-size: 1.4rem;
+    }
+
+    /* journey CTA */
+    .journey {
+      background: linear-gradient(145deg, #4d705a, #2f4d3a);
+      color: white;
+      padding: 60px 30px;
+      border-radius: 120px 20px 120px 20px;
+      margin: 60px 0;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
+    .journey h2 {
+      font-size: clamp(2rem, 5vw, 2.6rem);
+      font-weight: 350;
+      font-family: 'Times New Roman', serif;
+      max-width: 500px;
+    }
+    .journey .btn-light {
+      background: #ebcba0;
+      color: #1d3b24;
+      border: none;
+      padding: 14px 40px;
+      border-radius: 60px;
+      font-size: 1.3rem;
+      font-weight: 500;
+      transition: 0.2s;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .btn-light:hover {
+      background: #ffdcb5;
+    }
+
+    /* footer grid */
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+      margin: 50px 0 30px;
+      border-top: 2px solid #cfc2b2;
+      padding-top: 48px;
+    }
+    .footer-col p, .footer-col ul {
+      color: #43573f;
+    }
+    .footer-col ul {
+      list-style: none;
+    }
+    .footer-col li {
+      margin: 12px 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .footer-col a {
+      color: #4e6b4c;
+      text-decoration: none;
+      border-bottom: 1px dotted transparent;
+    }
+    .footer-col a:hover {
+      border-bottom-color: var(--leaf);
+    }
+    .footer-col .brand-tagline {
+      font-size: 1rem;
+      margin-top: 12px;
+      font-style: italic;
+    }
+    .social-icons {
+      display: flex;
+      gap: 16px;
+      margin: 20px 0;
+    }
+    .social-icons i {
+      font-size: 1.6rem;
+      color: var(--leaf);
+      cursor: default;
+    }
+
+    .copyright {
+      text-align: center;
+      padding: 24px 0 32px;
+      color: #6d7e68;
+      border-top: 1px dashed #b8aa99;
+    }
+
+    /* extra touches */
+    .leaf-bg {
+      background-image: radial-gradient(circle at 10% 30%, #d4c3aa20 2px, transparent 2px);
+      background-size: 24px 24px;
+    }
+
+    /* ===== RESPONSIVE TWEAKS (enhanced) ===== */
+    @media (max-width: 1024px) {
+      .booking-hero {
+        gap: 30px;
+      }
+      .footer-grid {
+        gap: 20px;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .booking-hero {
+        grid-template-columns: 1fr;
+      }
+      .booking-left p {
+        max-width: 100%;
+      }
+      .booking-right {
+        min-height: 220px;
+        order: -1; /* moves image above text on tablet */
+      }
+      .pillars {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .benefit-section {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .journey {
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+      }
+      .journey .btn-light {
+        white-space: normal;
+        width: fit-content;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 0 16px;
+      }
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .nav-links {
+        justify-content: flex-start;
+        gap: 1.2rem 1.5rem;
+      }
+      .pillars {
+        grid-template-columns: 1fr; /* single column on mobile */
+      }
+      .booking-right {
+        min-height: 180px;
+      }
+      .booking-right .floating-note {
+        padding: 14px 24px;
+        font-size: 1.2rem;
+      }
+      .benefit-stats {
+        padding: 24px 20px;
+      }
+      .stat-item {
+        gap: 12px;
+      }
+      .stat-item i {
+        font-size: 2rem;
+        width: 40px;
+      }
+      .stat-item span {
+        font-size: 1.2rem;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr; /* stack footer */
+        gap: 40px;
+      }
+      .journey {
+        padding: 40px 20px;
+        border-radius: 80px 10px 80px 10px;
+      }
+      .btn-booking {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .nav-links {
+        gap: 1rem;
+      }
+      .nav-links a {
+        font-size: 1rem;
+      }
+      .booking-left h1 {
+        font-size: 1.9rem;
+      }
+      .booking-left .subhead {
+        font-size: 1rem;
+      }
+      .pillar-item h3 {
+        font-size: 1.3rem;
+      }
+      .benefit-text h2 {
+        font-size: 1.8rem;
+      }
+      .footer-col li {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body class="leaf-bg">
+<div class="container">
+
+  <!-- header -->
+  <nav class="navbar">
+    <div class="logo">NAME<span>Āyurveda & healing</span></div>
+    <div class="nav-links">
+      <a href="#">Homepage</a>
+      <a href="#">About us</a>
+      <a href="#">Services</a>
+      <a href="#">Contact us</a>
+    </div>
+  </nav>
+
+  <!-- Booking hero -->
+  <div class="booking-hero">
+    <div class="booking-left">
+      <h1>Book Your Personalized Ayurvedic Consultation with Our Experts</h1>
+      <div class="subhead">Easy Online Booking for Herbal Wellness and Care.</div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus placeat consectetur mollitia, accusamus ratione consequuntur ea quibusdam commodi quasi alias a repellendus eos modi!</p>
+      <button class="btn-booking"><i class="fas fa-calendar-check"></i> book consultation</button>
+    </div>
+
+  </div>
+
+  <!-- three focus pillars -->
+  <div class="pillars">
+    <div class="pillar-item">
+      <i class="fas fa-spa"></i>
+      <h3>mind, body & spirit</h3>
+      <p>Focused on mind, body, and spirit for complete well-being.</p>
+    </div>
+    <div class="pillar-item">
+      <i class="fas fa-leaf"></i>
+      <h3>tailored wellness</h3>
+      <p>Tailored wellness plans based on individual health needs.</p>
+    </div>
+    <div class="pillar-item">
+      <i class="fas fa-brain"></i>
+      <h3>Ayurvedic principles</h3>
+      <p>Backed by research and guided by Ayurvedic principles. Helping individuals take control naturally.</p>
+    </div>
+  </div>
+
+  <!-- Benefit: nature's secret + therapist stats -->
+  <div class="benefit-section">
+    <div class="benefit-text">
+      <h2><i class="fas fa-seedling"></i> Nature's secret for your health.</h2>
+      <p>Alpajam pehteresque quam amem bibendum mollis per. Duis non rhoncus vulputate mauris euismod enim ornare. Duis eu id rutrum lobortis netus neque integer venenatis luctus libero a.</p>
+    </div>
+    <div class="benefit-stats">
+      <div class="stat-item"><i class="fas fa-hand-holding-heart"></i> <span>Professional Therapist</span></div>
+      <div class="stat-item"><i class="fas fa-comment-medical"></i> <span>Free Consultations</span></div>
+      <div class="stat-item"><i class="fas fa-star"></i> <span>Client Feedback & Reviews</span></div>
+    </div>
+  </div>
+
+  <!-- start your wellness journey -->
+  <div class="journey">
+    <h2>Start Your Wellness Journey Today!</h2>
+    <button class="btn-light"><i class="fas fa-arrow-right"></i>  discover treatments</button>
+  </div>
+
+  <!-- footer columns -->
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h4>NAME<span style="font-weight:300;">·spa</span></h4>
+      <p class="brand-tagline">NAME brings the wisdom of Ayurveda to modern wellness, offering premium herbal supplements & care.</p>
+      <div class="social-icons">
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-facebook"></i>
+        <i class="fab fa-whatsapp"></i>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Services</h5>
+      <ul>
+        <li><a href="#">Panchakarma</a></li>
+        <li><a href="#">Abhyanga massage</a></li>
+        <li><a href="#">Herbal consultations</a></li>
+        <li><a href="#">Yoga & meditation</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Support</h5>
+      <ul>
+        <li><a href="#">FAQs</a></li>
+        <li><a href="#">Privacy policy</a></li>
+        <li><a href="#">Contact therapist</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Get in touch</h5>
+      <ul>
+        <li><i class="fas fa-map-pin"></i>  Kerala</li>
+        <li><i class="fas fa-phone-alt"></i>  +91 98888888</li>
+        <li><i class="fas fa-envelope"></i>  hello@name.in</li>
+      </ul>
+      <p style="margin-top:16px;">🌿 open daily 9am – 7pm</p>
+    </div>
+  </div>
+
+  <!-- footer copyright -->
+  <div class="copyright">
+    <span>gggg hdh djb </span>
+    <span><i class="far fa-copyright"></i> 2026   all rights reserved </span>
+  </div>
+</div>
+</body>
+</html>
